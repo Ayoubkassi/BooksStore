@@ -4,6 +4,10 @@
  */
 package com.mycompany.td4;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author ryota
@@ -178,7 +182,11 @@ public class GUI extends javax.swing.JFrame {
                     int limit1 = Integer.parseInt(limit.getText());
                     
                     DataGUI cp = null;                   
-                    cp = new DataGUI(url.getText(),limit1);               
+        try {               
+            cp = new DataGUI(url.getText(),limit1);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
                     cp.setVisible(true);
                     this.setVisible(false);
         
