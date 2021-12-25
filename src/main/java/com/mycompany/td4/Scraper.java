@@ -25,7 +25,6 @@ public class Scraper {
     public ArrayList<Livre> getBooks(String url, int limit) throws IOException{
         
         //10 -> 100 row
-        limit/=10;
         for (int j = 1; j <= limit; j++) {
         String url1 = url;     
         url1=url+j;
